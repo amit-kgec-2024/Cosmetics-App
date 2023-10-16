@@ -1,4 +1,4 @@
-export default[
+const myArray = [
     {
         id: 0,
     img: "/product__2.webp",
@@ -255,4 +255,6 @@ export default[
     category: ["nail & wax"],
     sale: false,
     },
-]
+];
+
+export default myArray;
