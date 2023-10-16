@@ -1,4 +1,4 @@
-const myArray = [
+export default [
     {
         id: 0,
     img: "/product__2.webp",
@@ -256,5 +256,3 @@ const myArray = [
     sale: false,
     },
 ];
-
-export default myArray;
