@@ -1,9 +1,10 @@
 "use client"
-import React from 'react'
 import products from '@/utils/productData';
-import { useParams, useRouter } from 'next/navigation';
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useRouter } from 'next/router';
+import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+import Image from 'next/image';
 
 export interface Iproduct{
     id: number;
@@ -60,7 +61,7 @@ const page = () => {
         <div className="text-center py-2 font-bold text-2xl text-blue-500 border-b-2 border-dotted"><span>Order Summary</span></div>
         <div className="grid md:grid-cols-2 gap-16 my-3">
             <ul className='p-2 flex flex-col place-items-center'>
-                <img src={productData?.img} className='w-[30%]' alt="Santosh" />
+                <Image src={productData?.img} className='w-[30%]' alt="Santosh" />
                 <ul className='border border-gray-300  p-1 mt-4 px-2'>
                     <span>Qty:</span>
                     <select className='outline-none pl-2'  onChange={handelQulity}> 
