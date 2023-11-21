@@ -24,7 +24,7 @@ const CartProduct: React.FC<propsType> = ({
             <img className='h-[80px]' src={img} alt={name} />
             <div className="space-y-2">
                 <h3 className="font-medium">{name}</h3>
-                <p className="text-gray-600 text-[14px]">{quantity} x ${price}.00</p>
+                <p className="text-gray-600 text-[14px]">{quantity} x ₹{price}.00</p>
             </div>
             <div>
                 <RxCross1 className="cursor-pointer" onClick={() => dispatch(removeFromCart(id))}/>

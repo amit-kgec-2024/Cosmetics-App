@@ -12,9 +12,9 @@ const cartCount = useAppSelector((state) => state.cartReducer.length);
     <div className="bg-white py-4 p-16 sticky top-0 z-10">
       <div className="container flex justify-between items-center">
         <RxHamburgerMenu className='sm:hidden text-[26px]'/>
-        <Link href="/" className="text-4xl font-semibold hover:text-accent">IndMart</Link>
+        <Link href="/" className="text-4xl font-semibold text-transponent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-500">IndMart</Link>
         <ul className="gap-6 hidden sm:flex">
-          <Link href="" className="NavLink">Home</Link>
+          <Link href="/" className="NavLink">Home</Link>
           <li className="NavLink">Shop</li>
           <li className="NavLink">Blog</li>
           <li className="NavLink">Pages</li>

@@ -1,12 +1,13 @@
 "use client"
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import Data from "@/utils/productData"
 import Link from 'next/link'
 import Image from 'next/image'
 import { AiFillStar, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineStar } from 'react-icons/ai'
 import {MdCompareArrows} from 'react-icons/md'
-import {FaFacebookSquare, FaTwitter, FaInstagram} from 'react-icons/fa'
+import {FaFacebookSquare, FaTwitter, FaInstagram, FaShoppingBag} from 'react-icons/fa'
+
 
 export interface Iproduct{
     id: number;
@@ -18,6 +19,8 @@ export interface Iproduct{
 }
 
 const DetailPage = () => {
+
+    const router = useRouter();
 
     const params = useParams()
 
@@ -31,6 +34,7 @@ const DetailPage = () => {
     })
 
 
+    const id = params.id;
     useEffect(() => {
         const id = params.id;
         const getProductData = Data.filter((item) => item.id.toString()===id)[0]
@@ -59,11 +63,11 @@ const DetailPage = () => {
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiOutlineStar/>
-                        <p className="text-gray-400 text-[14px] ml-2 hover:text-accent cursor-pointer">(8 Customer review)</p>
+                        <p className="text-gray-400 text-[14px] ml-2 hover:text-accent cursor-pointer">(48 Customer review)</p>
                     </div>
                     <div className="space-y-6 text-[#161616]">
                         <h2 className="text-3xl  font-semibold">{productData?.name}</h2>
-                        <p className="text-xl">${productData?.price}.00</p>
+                        <p className="text-xl">₹{productData?.price}.00</p>
                     </div>
                     <p className="text-gray-500 text-[14px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nam quam ex iste sit, rerum vitae nemo magni modi quaerat.</p>
                     <p className="text-gray-500 text-[14px]">20 in Stock</p>
@@ -71,6 +75,7 @@ const DetailPage = () => {
                         <AiOutlineShoppingCart className='text-[24px]'/>
                         Add to Cart
                     </button>
+                    <button className='bg-pink-600 py-4 px-8 rounded-lg text-white flex gap-3' onClick={()=> router.push(`/orderdet/${id}`)}><FaShoppingBag/>Buy Now!</button>
                     <div className="flex gap-4 items-center uppercase py-4 text-[14px]">
                         <div className="flex gap-1 items-center"><AiOutlineHeart/>Add To Wish List</div>
                         <div className="flex gap-1 items-center"><MdCompareArrows/>Compare</div>

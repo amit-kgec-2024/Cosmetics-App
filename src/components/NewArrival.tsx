@@ -1,13 +1,11 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { Whisper } from 'next/font/google'
 import Data from '@/utils/productData'
 import ProductCard from '@/components/ProductCard'
 import { Iproduct } from '@/components/ProductCard'
 
-const whisper=Whisper({subsets:["latin"], weight:["400"]})
 
-const tapdata = ["All", "Skin Care", "Lipsticks", "Makeup", "Nail & Wax"]
+const tapdata = ["All", "Casual", "Formal", "Jeans", "Tshart"]
 
 const NewArrival = () => {
     const [selectedTab, setSelectedTab]=useState(0)
@@ -29,7 +27,7 @@ const NewArrival = () => {
         const category = tapdata[index].toLowerCase();
         setSelectedTab(index);
         if(category === "all"){
-            setData(shaffleArray(Data).slice(0, 16));
+            setData(shaffleArray(Data).slice(0, 28));
             return;
         }
         const filterData = Data.filter((item) => item.category.includes(category));
@@ -39,7 +37,6 @@ const NewArrival = () => {
   return (
     <div className="container pt-32">
         <div className="text-center">
-            <h3 className={`${whisper.className} text-[40px] text-gray-500`}>For your beauty</h3>
             <h2 className="font-semibold text-5xl">New Arrival</h2>
             <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center pt-8 uppercase font-medium text-xl">
                 {tapdata.map((text, index)=><li key={text} className={`${selectedTab === index && "text-accent"} cursor-pointer hover:text-accent`}

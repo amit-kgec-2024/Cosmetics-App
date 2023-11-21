@@ -11,7 +11,7 @@ const data =[
     {
         img: "/icon__ship.webp",
         title: "FREE SHIPPING",
-        desc: "Free shipping on all orders over $99"
+        desc: "Free shipping on all orders over ₹999"
     },
     {
         img: "/icon__money.webp",
@@ -22,7 +22,7 @@ const data =[
 const Feature = () => {
   return (
     <div className="container pt-16">
-        <div className="grid md:grid-cols-2 gap-y-8 lg:gap-y-4 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 gap-y-8 lg:gap-y-4 lg:grid-cols-3 gap-10">
             {data.map((el)=>(
                 <FeatureCard 
                 key={el.title}

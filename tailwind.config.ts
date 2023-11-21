@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-        accent: "#EC2D9E",
+        accent: "#14b8a6",
       },
       container:{
         center: true,

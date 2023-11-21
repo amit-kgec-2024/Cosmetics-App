@@ -26,7 +26,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
         switch(randomNumber(0, 5)){
             case 0:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiOutlineStar/>
                         <AiOutlineStar/>
                         <AiOutlineStar/>
@@ -36,7 +36,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
                 )
             case 1:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiFillStar/>
                         <AiOutlineStar/>
                         <AiOutlineStar/>
@@ -46,7 +46,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
                 )
             case 2:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiOutlineStar/>
@@ -56,7 +56,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
                 )
             case 3:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
@@ -66,7 +66,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
                 )
             case 4:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
@@ -76,7 +76,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
                 )
             case 5:
                 return(
-                    <div className="flex justify-center text-accent pt-4 pb-2">
+                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
                         <AiFillStar/>
                         <AiFillStar/>
                         <AiFillStar/>
@@ -120,7 +120,7 @@ const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
         </div>
         {getRating()}
         <h2 className="font-medium hover:text-accent pb-3">{name}</h2>
-        <p className="text-gray-600 font-light">${price}.00</p>
+        <p className="text-gray-600 font-light">₹{price}.00</p>
     </div>
   )
 }
