@@ -18,6 +18,7 @@ export interface Iproduct{
 }
 
 const page = () => {
+    
     const router = useRouter();
 
     const params = useParams()
@@ -54,7 +55,6 @@ const page = () => {
     const discountTotal = discountnotdot*dropItems;
     const totalDisPrice = disPrice * dropItems;
     // -----------------------------------------------------------
-    const [newdata, setoldnewdata] = useState<any>([])
     
   return (
     <div className='pt-1 w-full flex flex-col'>
