@@ -7,7 +7,7 @@ const Hero = () => {
 
    const [text] = useTypewriter({
     words: ["Start Selling Online Today"],
-    loop: {},
+    loop: true,
     typeSpeed: 120,
     deleteSpeed: 100,
   });

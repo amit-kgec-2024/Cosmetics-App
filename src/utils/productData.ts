@@ -1,4 +1,4 @@
-export default [
+const productData = [
     {
         id: 0,
     img: "/causal1.webp",
@@ -670,3 +670,5 @@ export default [
     sale: true,
     },
 ];
+
+export default productData;
