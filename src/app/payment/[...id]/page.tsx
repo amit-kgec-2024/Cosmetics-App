@@ -1,13 +1,10 @@
-"use client"
-import React, { useState } from 'react'
+import React from 'react'
 import Link from "next/link"
+import PaymentMode from '@/components/PaymentMode';
 
 
-const page = ({params}: {params: {id: string[]}}) => {
+const Payment = ({params}: {params: {id: string[]}}) => {
   const [id, dropItems, totalDisPrice, discountTotal] = params.id;
-
-    const paymentType = ['Wallet/Postpaid', 'Credit/Debit/ATM Card', 'Net Bankink', 'EMI(Easy Installments)', 'UPI', 'Cash on Delivery']
-  const [payBtn, payList] = useState("");
   
   return (
     <main>
@@ -15,15 +12,7 @@ const page = ({params}: {params: {id: string[]}}) => {
        <div className='font-bold text-center text-2xl text-blue-500 border-b-2 border-dotted'><p className='py-2'>Payment Details</p></div>
       <p className='text-1xl font-bold p-3'>All Options Payment</p>
       <ul className='p-6'>
-        {
-          paymentType.map((e)=>{
-            return(<div key={e} className='py-2'>
-            <input type ='radio' name='paymentType' id={e} value={e} onChange={(el)=>{payList(el.target.value)}}/>
-            <label htmlFor={e}> {e}</label>
-            <br/>
-          </div>)
-          })
-        }
+        <PaymentMode/>
       </ul>
           <div className="p-4">
             <ul className='grid md:grid-cols-1 gap-y-2'>
@@ -60,4 +49,4 @@ const page = ({params}: {params: {id: string[]}}) => {
   )
 }
 
-export default page
+export default Payment
