@@ -80,7 +80,7 @@ const OrderDetSec = ({id, name, img, stars, price, offer}: Iproduct) => {
                     <p>{totalDisPrice}</p>
                     <p className='text-xs text-blue-600'>View Price Details</p>
                 </ul>
-                <Link className='p-2 px-4 rounded-md bg-amber-400 float-right' href={(`/payment/${id}/${dropItems}/${totalDisPrice}/${discountTotal}`)}>Continue</Link>
+                <Link className='p-2 px-4 rounded-md bg-amber-400 float-right' href="/conningsoon">Continue</Link>
             </div>
         </div>
     </div>
