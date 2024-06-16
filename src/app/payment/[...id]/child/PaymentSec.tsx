@@ -58,7 +58,7 @@ const PaymentSec = ({ name, img, stars, price, offer}: Iproduct) => {
                     <p className='font-bold'>{amountPayble}</p>
                     <del className='text-xs text-gray-500'>{price * dropItemsNew}</del>
                 </ul>
-                <Link className='p-2 w-32 text-sm float-right rounded-md bg-amber-400' href={(`/`)}>Continue</Link>
+                <Link className='px-8 py-2 text-sm float-right rounded-md bg-amber-400' href={(`/`)}>Continue</Link>
                 
             </div>
           </div>  

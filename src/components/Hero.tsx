@@ -12,12 +12,11 @@ const Hero = () => {
     deleteSpeed: 100,
   });
   return (
-    <div className="container relative pt-16">
-        <Image className='w-[100%] h-auto' src="/mainimg.jpg" width={1500} height={900} alt='Hero Images'/>
-        <div className="hidden rounded-md sm:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white w-[250px] h-[250px] space-y-3 lg:w-[300] lg:h-[270px] lg:space-y-6 xl:w-[400px] xl:h-[300px] p-6 xl:space-y-8">
-            <h2 className="text-[22px] sm:text-[30px] xl:text-[30px] font-bold leading-tight text-indigo-500 "><span>{text}</span><span><Cursor cursorStyle="|"/></span></h2>
-            <p className='text-gray-600 text-[14px] xl:text-[16px]'>Check your best products & Order Now!</p>
-            <button className='bg-[#333] uppercase text-white text-[12px] lg:text-[16px] py-2 xl:py-4 px-8 rounded-md hover:bg-accent cursor-pointer'>Start Selling!</button>
+    <div className="flex items-center justify-center w-full">
+        <div className="shadow-2xl bg-white w-[30%] flex flex-col items-center justify-center p-4 gap-5 md:gap-10">
+            <h2 className="text-lg md:text-3xl font-bold leading-tight text-indigo-500 "><span>{text}</span><span><Cursor cursorStyle="|"/></span></h2>
+            <p className='text-gray-600 text-sm md:text-xl'>Check your best products & Order Now!</p>
+            <button className='bg-[#333] uppercase text-white text-sm md:text-xl py-2 p-4 md:px-8 rounded-md hover:bg-accent cursor-pointer'>Start Selling!</button>
         </div>
     </div>
   )

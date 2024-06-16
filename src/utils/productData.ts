@@ -2,10 +2,10 @@ const productData = [
     {
         id: 0,
     img: "/causal1.webp",
-    name: "HOP Kids Beige Leaf Abstract Printed Shirt",
+    name: "HOP Kids Beige Leaf Abstract Printed Shirt 0",
     price: 514.0,
     offer: 30,
-    stars: 3,
+    stars: 4,
     category: ["casual"],
     sale: false,
     },

@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image';
 import Link from 'next/link';
 import React, {useState, ChangeEvent} from 'react'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
@@ -25,7 +24,7 @@ const OrderDetSec = ({id, name, img, stars, price, offer}: Iproduct) => {
         <div className="text-center py-2 font-bold text-2xl text-blue-500 border-b-2 border-dotted"><span>Order Summary</span></div>
         <div className="grid md:grid-cols-2 gap-16 my-3">
             <ul className='p-2 flex flex-col place-items-center'>
-                <Image src={img} className='w-[30%]' alt="Santosh" />
+                <img width={1000} height={1000} src={img} className='w-[30%]' alt="Santosh" />
                 <ul className='border border-gray-300  p-1 mt-4 px-2'>
                     <span>Qty:</span>
                     <select className='outline-none pl-2'  onChange={handelQulity}> 

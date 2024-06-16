@@ -7,8 +7,13 @@ interface propType{
 }
 const CategoryCard = ({img, type, quantity}: propType) => {
   return (
-    <div className="space-y-4">
-        <Image className='rounded-full border-4 md:border-8 border-white' src={img} width={250} height={250} alt={type}/>
+    <div className="flex flex-col justify-center items-center gap-3">
+      <div className="rounded-full w-[15rem] h-[15rem] border-4 md:border-8 border-white" 
+      style={{
+                  backgroundImage: `url(${img})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}></div>
         <div>
             <h2 className="text-[14px] md:text-xl font-medium">{type}</h2>
             <p className="text-gray-400 text-[12px] md:text-[14px]">{quantity}</p>

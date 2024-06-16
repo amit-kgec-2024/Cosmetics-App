@@ -21,10 +21,9 @@ const data = [
     
 const Category = () => {
   return (
-    <div className="bg-[url(/mainimg2.jpg)] bg-no-repeat py-16 mt-32">
-        <div className="container text-center text-white">
-            <h2 className="text-[40px] font-medium">Top Category</h2>
-            <div className="flex justify-center gap-4 md:gap-16 pt-8">
+    <div className="bg-[url(/mainimg2.jpg)] bg-no-repeat flex flex-col justify-center items-center gap-4 text-slate-300 my-3 p-4 md:p-8">
+            <h2 className="text-lg md:text-3xl font-medium text-white py-3">Top Category</h2>
+            <div className="flex justify-around items-center w-full">
                 {data.map((el)=>(
                 <CategoryCard 
                 key={el.type}
@@ -33,7 +32,6 @@ const Category = () => {
                 quantity={el.quantity}
                 />))}
             </div>
-        </div>
     </div>
   )
 }

@@ -1,128 +1,61 @@
-import React from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import { AiFillStar, AiOutlineStar, AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
-import { addToCart } from '@/redux/feature/cardSlice';
-import { useAppDispatch } from '@/redux/hooks';
+import Link from 'next/link';
 
-export interface Iproduct{
-    id: number;
-    img: string;
-    name: string;
-    price: number;
-    sale: boolean | undefined;
+export interface IProduct {
+  id: number;
+  img: string;
+  name: string;
+  price: number;
+  stars: number;
+  sale: boolean | undefined;
 }
 
-const ProductCard = ({id, img, name, price, sale}: Iproduct) => {
-
-    const router = useRouter()
-
-    const dispatch = useAppDispatch()
-
-    const getRating = () =>{
-        const randomNumber = (min: number, max: number) =>{
-            return Math.ceil(Math.random() * (max-min) + min)
-        }
-        switch(randomNumber(0, 5)){
-            case 0:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                    </div>
-                )
-            case 1:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiFillStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                    </div>
-                )
-            case 2:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                    </div>
-                )
-            case 3:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiOutlineStar/>
-                        <AiOutlineStar/>
-                    </div>
-                )
-            case 4:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiOutlineStar/>
-                    </div>
-                )
-            case 5:
-                return(
-                    <div className="flex justify-center text-yellow-600 pt-4 pb-2">
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                        <AiFillStar/>
-                    </div>
-                )
-            default:
-                return <div></div>
-        }
-    }
-
-    const addProductToCart = (e: React.FormEvent) => {
-        e.stopPropagation()
-        const payload = {
-            id,
-            name,
-            img,
-            price,
-            quantity: 1
-        }
-
-        dispatch(addToCart(payload));
-    }
+const ProductCard: React.FC<IProduct> = ({ id, img, name, price, sale, stars }) => {
 
   return (
-    <div className="group cursor-pointer" onClick={() => router.push(`/details/${id}`)}>
+    <Link href={`/details/${id}`} passHref>
+      <div className="group cursor-pointer shadow-lg p-2 flex flex-col justify-between">
         <div className="relative">
-            <Image className='w-full' width={1000} height={1142} src={img} alt={name}/>
-            {sale && <div className='bg-red-600 inline-block absolute top-0 left-0 text-[14px] text-white rounded-md px-2 py-[2px] m-4'>SALE!</div>}
-            <div className="absolute top-0 left-0 w-full h-full bg-[#00000050] opacity-0 transition-opacity duration-500 group-hover:opacity-100 cursor-pointer">
-                <div className="absolute bottom-0 mb-4 left-[50%] translate-x-[-50%] flex gap-2">
-                    <div className="bg-white w-[50px] h-[50px] text-[26px] grid place-items-center">
-                        <AiOutlineHeart/>
-                    </div>
-                    <div className="bg-white w-[50px] h-[50px] text-[26px] grid place-items-center" onClick = {addProductToCart}>
-                        <AiOutlineShoppingCart/>
-                    </div>
-                </div>
+          <div className="w-full h-[20rem]" style={{
+            backgroundImage: `url(${img})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}></div>
+          {sale && (
+            <div className="bg-red-600 inline-block absolute top-0 left-0 text-[14px] text-white rounded-md px-2 py-[2px] m-4">
+              SALE!
             </div>
+          )}
+          <div className="absolute top-0 left-0 w-full h-full bg-[#00000050] opacity-0 transition-opacity duration-500 group-hover:opacity-100 cursor-pointer">
+            <div className="absolute bottom-0 mb-4 left-[50%] translate-x-[-50%] flex gap-2">
+              <div className="bg-white w-[50px] h-[50px] text-[26px] grid place-items-center">
+                <AiOutlineHeart />
+              </div>
+              <button
+                className="bg-white w-[50px] h-[50px] text-[26px] grid place-items-center"
+              >
+                <AiOutlineShoppingCart />
+              </button>
+            </div>
+          </div>
         </div>
-        {getRating()}
-        <h2 className="font-medium hover:text-accent pb-3">{name}</h2>
-        <p className="text-gray-600 font-light">₹{price}.00</p>
-    </div>
-  )
-}
+        <div className="flex flex-col">
+          <div className="flex flex-row gap-2 text-xl p-2 text-green-700">
+            {[1, 2, 3, 4, 5].map((ele) =>
+              ele <= stars ? (
+                <AiFillStar key={ele} />
+              ) : (
+                <AiOutlineStar key={ele} />
+              )
+            )}
+          </div>
+          <h2 className="font-medium hover:text-accent pb-3">{name}</h2>
+          <p className="text-gray-600 font-light">₹{price}.00</p>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
-export default ProductCard
+export default ProductCard;

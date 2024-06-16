@@ -21,8 +21,8 @@ const data =[
 ]
 const Feature = () => {
   return (
-    <div className="container pt-16">
-        <div className="grid md:grid-cols-2 gap-y-8 lg:gap-y-4 lg:grid-cols-3 gap-10">
+    <div className="container p-3">
+        <div className="flex flex-row items-center justify-around">
             {data.map((el)=>(
                 <FeatureCard 
                 key={el.title}
