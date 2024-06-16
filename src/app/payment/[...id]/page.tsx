@@ -3,7 +3,7 @@ import Link from "next/link"
 import PaymentMode from '@/components/PaymentMode';
 
 
-const Payment = ({params}: {params: {id: string[]}}) => {
+const page = ({params}: {params: {id: string[]}}) => {
   const [id, dropItems, totalDisPrice, discountTotal] = params.id;
   
   return (
@@ -49,4 +49,4 @@ const Payment = ({params}: {params: {id: string[]}}) => {
   )
 }
 
-export default Payment
+export default page
