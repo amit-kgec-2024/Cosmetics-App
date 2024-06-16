@@ -8,7 +8,6 @@ const page = ({params}: {params: {id: string[]}}) => {
   
   return (
     <main>
-      {discountTotal}
        <div className='font-bold text-center text-2xl text-blue-500 border-b-2 border-dotted'><p className='py-2'>Payment Details</p></div>
       <p className='text-1xl font-bold p-3'>All Options Payment</p>
       <ul className='p-6'>
