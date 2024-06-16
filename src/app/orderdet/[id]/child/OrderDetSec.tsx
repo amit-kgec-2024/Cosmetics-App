@@ -16,7 +16,6 @@ const OrderDetSec = ({id, name, img, stars, price, offer}: Iproduct) => {
     const discountdot = (price / 100) * offer;
     const discountnotdot = Math.round(discountdot)
     const disPrice =price - discountnotdot;
-    const itempriceTotl = price * dropItems;
     const discountTotal = discountnotdot*dropItems;
     const totalDisPrice = disPrice * dropItems;
   return (
@@ -80,7 +79,7 @@ const OrderDetSec = ({id, name, img, stars, price, offer}: Iproduct) => {
                     <p>{totalDisPrice}</p>
                     <p className='text-xs text-blue-600'>View Price Details</p>
                 </ul>
-                <Link className='p-2 px-4 rounded-md bg-amber-400 float-right' href={(`/payment/${id}/${dropItems}`)}>Continue</Link>
+                <Link className='p-2 px-4 rounded-md bg-amber-400 float-right' href={(`/payment/${id}/${dropItems}/${totalDisPrice}/${discountTotal}`)}>Continue</Link>
             </div>
         </div>
     </div>
