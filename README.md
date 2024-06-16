@@ -1,1 +1,1 @@
-Open [Visit our Website](https://cosmetics-rnmxq62d5-amit-mandals-projects.vercel.app/)
+Open [Visit our Website](https://cosmetics-app.vercel.app/)
